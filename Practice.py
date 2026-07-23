@@ -1,10 +1,11 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, AnyUrl, Field
 from typing import List, Dict, Optional
 
 class Player(BaseModel):
 
     name: str
     email:EmailStr
+    linkedin: AnyUrl
     age: int
     game: str
     role: str
@@ -25,6 +26,7 @@ def update_player_data (player:Player):
 
     print(player.name)
     print(player.email)
+    print(player.linkedin)
     print(player.age)
     print(player.game)
     print(player.role)
