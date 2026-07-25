@@ -30,15 +30,15 @@ class Player(BaseModel):
     def generalize_name(cls, value):
         return value.upper()
 
-    @field_validator('age', mode='after')
+    @field_validator('age', mode='before')
     @classmethod
     def age_criteria(cls,value):
-        if 0 < value < 50:
+        if 10 < value < 50:
             return value
         else:
             raise ValueError('Age should be in between 0 and 50') 
 
-def insert_player_data (player:Player):
+def insert_player_data(player:Player):
 
     print(player.name)
     print(player.age)
