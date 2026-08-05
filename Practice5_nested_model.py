@@ -23,3 +23,4 @@ player1 = Player(**player_dict)
 
 print(player1)
 print(player1.name)
+print("Sucessfully Executed")
